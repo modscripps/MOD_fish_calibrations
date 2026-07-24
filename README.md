@@ -28,9 +28,9 @@ Calibration files needed for MOD_fish_acquisition and MOD_fish_processing
 SBE 0387 and 0537 came back from factory calibration in March 2023.
 
 ```
-cp NEWCALS/0387.CAL SBECAL/0387.CAL
-cp NEWCALS/0537.CAL SBECAL/0537.CAL
-git add SBECAL/0387.CAL SBECAL/0537.CAL
+cp NEWCALS/0387.CAL SBE/0387.CAL
+cp NEWCALS/0537.CAL SBE/0537.CAL
+git add SBE/0387.CAL SBE/0537.CAL
 git commit -m "Update 0387.CAL and 0537.CAL - factory calibrations March 2023"
 git tag -a cal/2023-03 -m "Calibration update March 2023"
 ```
@@ -58,12 +58,12 @@ git diff cal/2023-03 cal/2025-03
 
 ### See the history of a specific instrument:
 ```
-git log --oneline -- SBECAL/0387.CAL
+git log --oneline -- SBE/0387.CAL
 ```
 
 ## Using old calibration files to reprocess data
 
-If you need to reprocess data from an old cruise and want al files to reflect the state they were in at that time, extract the complete snapshot of the repo into a new folder on your machine. This will leave the calibrations repo completely untouched so you don't accidentally make changes started at an old state or forget to go back to main.
+If you need to reprocess data from an old cruise and want all files to reflect the state they were in at that time, extract the complete snapshot of the repo into a new folder on your machine. This will leave the calibrations repo completely untouched so you don't accidentally make changes started at an old state or forget to go back to main.
 
 ```
 mkdir ~/Desktop/reprocess_CRUISE_NAME
